@@ -39,17 +39,17 @@ const ProductLaunchSection = () => {
             <img
               src={abertoImg}
               alt="Produto aberto"
-              className="w-full max-w-md h-40 rounded-lg shadow-md object-cover"
+              className="w-full max-w-xs h-40 rounded-lg shadow-md object-cover"
             />
             <img
               src={fechadoImg}
               alt="Produto fechado"
-              className="w-full max-w-md h-40 rounded-lg shadow-md object-cover"
+              className="w-full max-w-xs h-40 rounded-lg shadow-md object-cover"
             />
             <img
               src={batomImg}
               alt="Batom"
-              className="w-full max-w-md h-40 rounded-lg shadow-md object-cover"
+              className="w-full max-w-xs h-40 rounded-lg shadow-md object-cover"
             />
           </div>
 
