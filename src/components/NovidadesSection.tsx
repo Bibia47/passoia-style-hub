@@ -12,7 +12,7 @@ const NovidadesSection = () => {
           <img
             src={novidadesImg}
             alt="Novidades"
-            className="w-full h-[30vh] object-cover rounded-lg shadow-xl"
+            className="w-full h-[60vh] object-cover rounded-lg shadow-xl"
           />
         </div>
       </div>
