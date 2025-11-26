@@ -58,7 +58,7 @@ const ProductLaunchSection = () => {
             <img
               src={selectedImage}
               alt="Produto principal"
-              className="w-full max-w-md h-auto rounded-lg shadow-xl"
+              className="w-full max-w-lg h-[600px] rounded-lg shadow-xl object-cover"
             />
           </div>
 
