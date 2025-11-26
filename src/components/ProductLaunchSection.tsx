@@ -3,6 +3,9 @@ import abertoImg from "@/assets/aberto.png";
 import fechadoImg from "@/assets/fechado.png";
 import batomImg from "@/assets/batom.png";
 import cinzaBocaImg from "@/assets/cinza-boca.png";
+import vermelhoBocaImg from "@/assets/vermelho-boca.png";
+import bordoBocaImg from "@/assets/bordo-boca.png";
+import nudeBocaImg from "@/assets/nude-boca.png";
 import estrelasImg from "@/assets/estrelas.png";
 import cinzaColorImg from "@/assets/cinza-color.png";
 import vermelhoColorImg from "@/assets/vermelho-color.png";
@@ -14,9 +17,9 @@ const ProductLaunchSection = () => {
 
   const colorMap: Record<string, string> = {
     [cinzaColorImg]: cinzaBocaImg,
-    [vermelhoColorImg]: cinzaBocaImg, // Placeholder - você pode adicionar vermelho-boca.png depois
-    [bordoColorImg]: cinzaBocaImg, // Placeholder - você pode adicionar bordo-boca.png depois
-    [nudeColorImg]: cinzaBocaImg, // Placeholder - você pode adicionar nude-boca.png depois
+    [vermelhoColorImg]: vermelhoBocaImg,
+    [bordoColorImg]: bordoBocaImg,
+    [nudeColorImg]: nudeBocaImg,
   };
 
   const handleColorClick = (colorImg: string) => {
