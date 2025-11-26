@@ -35,21 +35,21 @@ const ProductLaunchSection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
           {/* First Column - Hidden on mobile */}
-          <div className="hidden lg:flex flex-col gap-4">
+          <div className="hidden lg:flex flex-col gap-4 justify-center">
             <img
               src={abertoImg}
               alt="Produto aberto"
-              className="w-full h-auto rounded-lg shadow-md"
+              className="w-full max-w-md h-auto rounded-lg shadow-md object-cover"
             />
             <img
               src={fechadoImg}
               alt="Produto fechado"
-              className="w-full h-auto rounded-lg shadow-md"
+              className="w-full max-w-md h-auto rounded-lg shadow-md object-cover"
             />
             <img
               src={batomImg}
               alt="Batom"
-              className="w-full h-auto rounded-lg shadow-md"
+              className="w-full max-w-md h-auto rounded-lg shadow-md object-cover"
             />
           </div>
 
