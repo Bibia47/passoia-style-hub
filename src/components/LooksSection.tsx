@@ -47,10 +47,25 @@ const products: Product[] = [
 const LooksSection = () => {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
+  const handleProductClick = (product: Product) => {
+    setSelectedProduct(product);
+  };
+
+  const handleKeyDown = (event: React.KeyboardEvent, product: Product) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      handleProductClick(product);
+    }
+  };
+
   return (
-    <section id="looks" className="py-16 px-4 bg-secondary/30 scroll-mt-20">
+    <section 
+      id="looks" 
+      className="py-16 px-4 bg-secondary/30 scroll-mt-20"
+      aria-labelledby="looks-heading"
+    >
       <div className="container mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-12 text-foreground">
+        <h2 id="looks-heading" className="text-4xl font-bold text-center mb-12 text-foreground">
           LOOKS E DICAS DE MAQUIAGEM
         </h2>
 
@@ -58,12 +73,16 @@ const LooksSection = () => {
           {products.map((product) => (
             <div
               key={product.id}
-              className="cursor-pointer group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-              onClick={() => setSelectedProduct(product)}
+              role="button"
+              tabIndex={0}
+              className="cursor-pointer group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+              onClick={() => handleProductClick(product)}
+              onKeyDown={(e) => handleKeyDown(e, product)}
+              aria-label={`Ver detalhes de ${product.name} - ${product.description}`}
             >
               <img
                 src={product.image}
-                alt={product.name}
+                alt={`Produtos de maquiagem para ${product.name.toLowerCase()} - ${product.description}`}
                 className="w-full h-64 object-cover"
               />
             </div>
@@ -72,7 +91,7 @@ const LooksSection = () => {
       </div>
 
       <Dialog open={!!selectedProduct} onOpenChange={() => setSelectedProduct(null)}>
-        <DialogContent className="max-w-2xl">
+        <DialogContent className="max-w-2xl" aria-describedby="product-description">
           {selectedProduct && (
             <>
               <DialogHeader>
@@ -83,13 +102,13 @@ const LooksSection = () => {
               <div className="mt-4">
                 <img
                   src={selectedProduct.image}
-                  alt={selectedProduct.name}
+                  alt={`Imagem detalhada de ${selectedProduct.name} - ${selectedProduct.description}`}
                   className="w-full h-80 object-cover rounded-lg mb-4"
                 />
-                <p className="text-muted-foreground mb-4">
+                <p id="product-description" className="text-muted-foreground mb-4">
                   {selectedProduct.description}
                 </p>
-                <p className="text-2xl font-bold text-primary">
+                <p className="text-2xl font-bold text-primary" aria-label={`Preço: ${selectedProduct.price}`}>
                   {selectedProduct.price}
                 </p>
               </div>
