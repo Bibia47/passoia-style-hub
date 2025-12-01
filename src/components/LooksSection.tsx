@@ -48,7 +48,7 @@ const LooksSection = () => {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   return (
-    <section id="looks" className="py-16 px-4 bg-secondary/30">
+    <section id="looks" className="py-16 px-4 bg-secondary/30 scroll-mt-20">
       <div className="container mx-auto">
         <h2 className="text-4xl font-bold text-center mb-12 text-foreground">
           LOOKS E DICAS DE MAQUIAGEM
