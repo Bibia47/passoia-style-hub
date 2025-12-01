@@ -2,7 +2,7 @@ import novidadesImg from "@/assets/novidades.png";
 
 const NovidadesSection = () => {
   return (
-    <section id="novidades" className="min-h-screen flex items-center py-8 px-4 bg-secondary/30 scroll-mt-20">
+    <section id="novidades" className="min-h-[calc(100vh-5rem)] flex items-center py-6 px-4 bg-secondary/30 scroll-mt-20">
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold text-center mb-6 text-foreground">
           NOVIDADES PARA VOCÊ
