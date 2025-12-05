@@ -61,15 +61,15 @@ const LooksSection = () => {
   return (
     <section 
       id="looks" 
-      className="py-16 px-4 bg-secondary/30 scroll-mt-20"
+      className="h-[calc(100vh-5rem)] py-4 px-4 bg-secondary/30 scroll-mt-20 flex flex-col justify-center"
       aria-labelledby="looks-heading"
     >
       <div className="container mx-auto">
-        <h2 id="looks-heading" className="text-4xl font-bold text-center mb-12 text-foreground">
+        <h2 id="looks-heading" className="text-2xl lg:text-3xl font-bold text-center mb-4 text-foreground">
           LOOKS E DICAS DE MAQUIAGEM
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
           {products.map((product) => (
             <div
               key={product.id}
@@ -83,7 +83,7 @@ const LooksSection = () => {
               <img
                 src={product.image}
                 alt={`Produtos de maquiagem para ${product.name.toLowerCase()} - ${product.description}`}
-                className="w-full h-64 object-cover"
+                className="w-full h-[30vh] lg:h-[50vh] object-cover"
               />
             </div>
           ))}
