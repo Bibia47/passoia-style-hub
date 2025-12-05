@@ -36,40 +36,40 @@ const ProductLaunchSection = () => {
   return (
     <section 
       id="lancamentos" 
-      className="min-h-[calc(100vh-5rem)] flex items-center py-6 px-4 scroll-mt-20"
+      className="h-[calc(100vh-5rem)] flex items-center py-4 px-4 scroll-mt-20"
       aria-labelledby="lancamentos-heading"
     >
-      <div className="container mx-auto">
-        <h2 id="lancamentos-heading" className="text-3xl font-bold text-center mb-6 text-foreground">
+      <div className="container mx-auto h-full flex flex-col">
+        <h2 id="lancamentos-heading" className="text-2xl lg:text-3xl font-bold text-center mb-4 text-foreground">
           APROVEITE OS LANÇAMENTOS
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-center flex-1 min-h-0">
           {/* First Column - Hidden on mobile */}
-          <div className="hidden lg:flex flex-col gap-3 justify-center" aria-label="Galeria de produtos">
+          <div className="hidden lg:flex flex-col gap-2 justify-center h-full" aria-label="Galeria de produtos">
             <img
               src={abertoImg}
               alt="Batom Matte Premium aberto mostrando a textura cremosa e aveludada"
-              className="w-full max-w-xs h-28 rounded-lg shadow-md object-cover"
+              className="w-full max-w-xs h-[calc((100%-1rem)/3)] rounded-lg shadow-md object-cover"
             />
             <img
               src={fechadoImg}
               alt="Embalagem fechada do Batom Matte Premium com design elegante"
-              className="w-full max-w-xs h-28 rounded-lg shadow-md object-cover"
+              className="w-full max-w-xs h-[calc((100%-1rem)/3)] rounded-lg shadow-md object-cover"
             />
             <img
               src={batomImg}
               alt="Batom Matte Premium em detalhe com acabamento luxuoso"
-              className="w-full max-w-xs h-28 rounded-lg shadow-md object-cover"
+              className="w-full max-w-xs h-[calc((100%-1rem)/3)] rounded-lg shadow-md object-cover"
             />
           </div>
 
           {/* Second Column - Main Product Image */}
-          <div className="flex items-center justify-center" role="img" aria-label={`Batom na cor ${colorNames[Object.keys(colorMap).find(key => colorMap[key] === selectedImage) || cinzaColorImg]}`}>
+          <div className="flex items-center justify-center h-full" role="img" aria-label={`Batom na cor ${colorNames[Object.keys(colorMap).find(key => colorMap[key] === selectedImage) || cinzaColorImg]}`}>
             <img
               src={selectedImage}
               alt={`Batom Matte Premium na cor ${colorNames[Object.keys(colorMap).find(key => colorMap[key] === selectedImage) || cinzaColorImg]} aplicado nos lábios`}
-              className="w-full max-w-md h-[450px] lg:h-[500px] rounded-lg shadow-xl object-cover"
+              className="w-full max-w-md h-full max-h-[60vh] rounded-lg shadow-xl object-cover"
             />
           </div>
 
