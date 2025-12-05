@@ -5,11 +5,13 @@ import ProductLaunchSection from "@/components/ProductLaunchSection";
 import NovidadesSection from "@/components/NovidadesSection";
 import Footer from "@/components/Footer";
 import SkipLink from "@/components/SkipLink";
+import AccessibilityButton from "@/components/AccessibilityButton";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <SkipLink />
+      <AccessibilityButton />
       <Header />
       <main id="main-content" tabIndex={-1} className="outline-none">
         <HeroSection />
