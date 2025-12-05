@@ -36,15 +36,15 @@ const ProductLaunchSection = () => {
   return (
     <section 
       id="lancamentos" 
-      className="h-[calc(100vh-5rem)] flex items-center py-4 px-4 scroll-mt-20"
+      className="h-[calc(100vh-5rem)] flex items-center py-2 px-4 scroll-mt-20 overflow-hidden"
       aria-labelledby="lancamentos-heading"
     >
       <div className="container mx-auto h-full flex flex-col">
-        <h2 id="lancamentos-heading" className="text-2xl lg:text-3xl font-bold text-center mb-4 text-foreground">
+        <h2 id="lancamentos-heading" className="text-xl lg:text-3xl font-bold text-center mb-2 lg:mb-4 text-foreground">
           APROVEITE OS LANÇAMENTOS
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-center flex-1 min-h-0">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 lg:gap-4 items-center flex-1 min-h-0">
           {/* First Column - Hidden on mobile */}
           <div className="hidden lg:flex flex-col gap-2 justify-center h-full" aria-label="Galeria de produtos">
             <img
@@ -65,28 +65,28 @@ const ProductLaunchSection = () => {
           </div>
 
           {/* Second Column - Main Product Image */}
-          <div className="flex items-center justify-center h-full" role="img" aria-label={`Batom na cor ${colorNames[Object.keys(colorMap).find(key => colorMap[key] === selectedImage) || cinzaColorImg]}`}>
+          <div className="flex items-center justify-center h-[45vh] lg:h-full" role="img" aria-label={`Batom na cor ${colorNames[Object.keys(colorMap).find(key => colorMap[key] === selectedImage) || cinzaColorImg]}`}>
             <img
               src={selectedImage}
               alt={`Batom Matte Premium na cor ${colorNames[Object.keys(colorMap).find(key => colorMap[key] === selectedImage) || cinzaColorImg]} aplicado nos lábios`}
-              className="w-full max-w-md h-full max-h-[60vh] rounded-lg shadow-xl object-cover"
+              className="w-full max-w-md h-full rounded-lg shadow-xl object-cover"
             />
           </div>
 
           {/* Third Column - Product Info and Colors */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-2 lg:gap-4">
             <img
               src={estrelasImg}
               alt="Avaliação de 5 estrelas - produto altamente recomendado pelos clientes"
-              className="w-32 h-auto"
+              className="w-24 lg:w-32 h-auto"
               role="img"
               aria-label="Classificação 5 de 5 estrelas"
             />
 
-            <h3 className="text-2xl font-bold text-foreground">Matte Premium</h3>
+            <h3 className="text-xl lg:text-2xl font-bold text-foreground">Matte Premium</h3>
 
             <div>
-              <h4 className="text-base font-semibold text-foreground mb-2">
+              <h4 className="text-sm lg:text-base font-semibold text-foreground mb-1 lg:mb-2">
                 Cores disponíveis
               </h4>
               <div className="flex gap-2" role="group" aria-label="Seletor de cores do batom">
@@ -97,7 +97,7 @@ const ProductLaunchSection = () => {
                       <button
                         key={index}
                         onClick={() => handleColorClick(colorImg)}
-                        className={`w-10 h-10 rounded-full border-2 transition-all transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
+                        className={`w-8 h-8 lg:w-10 lg:h-10 rounded-full border-2 transition-all transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
                           isSelected ? 'border-primary ring-2 ring-primary' : 'border-border hover:border-primary'
                         }`}
                         aria-label={`Selecionar cor ${colorNames[colorImg]}`}
@@ -116,10 +116,10 @@ const ProductLaunchSection = () => {
             </div>
 
             <div>
-              <h4 className="text-base font-semibold text-foreground mb-2">
+              <h4 className="text-sm lg:text-base font-semibold text-foreground mb-1 lg:mb-2">
                 Descrição
               </h4>
-              <p className="text-sm text-muted-foreground leading-relaxed">
+              <p className="text-xs lg:text-sm text-muted-foreground leading-relaxed line-clamp-4 lg:line-clamp-none">
                 O Batom Matte possui uma fórmula inovadora desenvolvida para entregar
                 o máximo de cor na primeira aplicação com um deslize suave e macio.
                 Tem acabamento matte aveludado e manteiga de manga que ajuda a
